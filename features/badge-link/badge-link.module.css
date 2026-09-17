@@ -1,0 +1,25 @@
+.link {
+  position: relative;
+  height: 24px;
+  width: 24px;
+  display: inline-block;
+  line-height: 0;
+}
+
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 17.4px;
+  height: 17.4px;
+  padding: 0 4px;
+  border-radius: 9999px;
+  background-color: var(--color-accent-primary);
+  color: var(--color-text-on-accent);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 17.4px;
+  text-align: center;
+  box-sizing: border-box;
+  pointer-events: none;
+}
