@@ -2,9 +2,10 @@ import { Link } from "react-router";
 import header from "./header.module.css";
 import { useState } from "react";
 import { BadgeLink } from "@features/badge-link/badge-link";
+import { useCart } from "@shared/hooks/use-cart";
 export function Header(): React.JSX.Element {
-  // вынести в хук
-  const [countToCart, setCountToCart] = useState<number>(0);
+   const { cartProducts } = useCart();
+  // вынести в хук 
   const [countToFavorite, setCountToFavorite] = useState<number>(0);
   // вынести в хук
   return (
@@ -37,7 +38,7 @@ export function Header(): React.JSX.Element {
         <BadgeLink path={"/favorite"} count={countToFavorite}>
           <img src="/icons/header/favorite.svg" alt="favorite" />
         </BadgeLink>
-        <BadgeLink path={"/cart"} count={countToCart}>
+        <BadgeLink path={"/cart"} count={cartProducts.totalamount}>
           <img src="/icons/header/cart.svg" alt="cart" />
         </BadgeLink>
         {/* мепить */}
