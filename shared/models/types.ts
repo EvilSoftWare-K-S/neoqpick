@@ -9,9 +9,11 @@ export type TBDProducts = {
 };
 export type TProduct = Omit<TBDProducts, "type">;
 
-export type ProductsResponse = Record<string, TProduct[]>;
+export type TProductsResponse = Record<string, TProduct[]>;
 
-export type ProductsStorage = {
-  items: Record<string, TProduct & { amount: number }>;
+export type TProductCart = TProduct & { amount: number };
+
+export type TProductsStorage = {
+  items: Record<string, TProductCart>;
   totalamount: number;
 };

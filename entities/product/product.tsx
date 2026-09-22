@@ -50,4 +50,3 @@ export function Product({ product }: { product: TProduct }) {
     </article>
   );
 }
- 
