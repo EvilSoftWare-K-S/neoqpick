@@ -2,7 +2,7 @@ import type { Route } from "./+types/catalog";
 import { BD_PRODUCTS } from "@shared/models/mock";
 import type { TProductsResponse } from "@shared/models/types";
 import catalog from "./catalog.module.css";
-import { Product } from "@entities/product/product";
+import { CatalogItem } from "@entities/catalog-item/catalog-item";
 
 // запрос и метатег оставить на уровне страницы
 export function meta({}: Route.MetaArgs) {
@@ -11,13 +11,16 @@ export function meta({}: Route.MetaArgs) {
 
 export async function loader() {
   const products: TProductsResponse = await (function () {
-    return BD_PRODUCTS.reduce<TProductsResponse>((acc, { type, ...product }) => {
-      if (!acc[type]) {
-        acc[type] = [];
-      }
-      acc[type].push(product);
-      return acc;
-    }, {});
+    return BD_PRODUCTS.reduce<TProductsResponse>(
+      (acc, { type, ...product }) => {
+        if (!acc[type]) {
+          acc[type] = [];
+        }
+        acc[type].push(product);
+        return acc;
+      },
+      {},
+    );
   })();
 
   return { products };
@@ -40,7 +43,7 @@ export default function Catalog({ loaderData }: Route.ComponentProps) {
               </h2>
               <div className={catalog.catalog_section_wraparticle_wrap}>
                 {products[type].map((product) => {
-                  return <Product key={product.id} product={product} />;
+                  return <CatalogItem key={product.id} product={product} />;
                 })}
               </div>
             </article>

@@ -1,6 +1,5 @@
 import { useCart } from "@shared/hooks/use-cart";
 import cart from "./cart-list.module.css";
-import { Product } from "@entities/product/product";
 import type { Route } from "./+types/cart-list";
 import { CartOrder } from "@entities/cart-order/cart-order";
 import { currencyFormatter } from "@shared/utils/currency-formatter";

@@ -4,7 +4,7 @@
   --color-text-heading: #1c1c27;
   --color-text-logo: #101010;
   --color-text-muted: #838383;
-  --color-text-muted2:#AAAAAA;
+  --color-text-muted2: #aaaaaa;
   --color-text-default: #000000;
   --color-text-on-accent: #ffffff;
 
@@ -58,16 +58,12 @@ span {
   font-family: "Montserrat", sans-serif;
 }
 body {
-  max-width: 1110px;
+  max-width: 1140px;
   display: grid;
   grid-template-rows: min-content auto min-content;
   background-color: var(--color-bg);
   margin: auto;
-}
-
-body :focus-visible {
-  outline: 2px solid var(--color-accent-primary);
-  outline-offset: 2px;
+  padding: 0 15px;
 }
 
 body :focus-visible {
