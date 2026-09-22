@@ -1,6 +1,6 @@
 import type { Route } from "./+types/catalog";
 import { BD_PRODUCTS } from "@shared/models/mock";
-import type { ProductsResponse } from "@shared/models/types";
+import type { TProductsResponse } from "@shared/models/types";
 import catalog from "./catalog.module.css";
 import { Product } from "@entities/product/product";
 
@@ -10,8 +10,8 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export async function loader() {
-  const products: ProductsResponse = await (function () {
-    return BD_PRODUCTS.reduce<ProductsResponse>((acc, { type, ...product }) => {
+  const products: TProductsResponse = await (function () {
+    return BD_PRODUCTS.reduce<TProductsResponse>((acc, { type, ...product }) => {
       if (!acc[type]) {
         acc[type] = [];
       }
@@ -26,7 +26,7 @@ export async function loader() {
 
 // выделить виджет который отвечает за рендер присланных компонент и переданных в них пропсов через чайлд
 export default function Catalog({ loaderData }: Route.ComponentProps) {
-  const { products }: { products: ProductsResponse } = loaderData;
+  const { products }: { products: TProductsResponse } = loaderData;
   const title = null;
   return (
     <main>

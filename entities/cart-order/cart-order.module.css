@@ -1,0 +1,59 @@
+.cartorder {
+  /* height: 218px; */
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+  background-color: var(--color-text-on-accent);
+  box-shadow: var(--shadow-card);
+
+  padding: 18px 28px 15px 18px;
+}
+/* .cartorder_wrap {
+    display: flex;
+  padding: 18px 28px 15px 18px;
+} */
+.cartorder_wrapinfo {
+  display: grid;
+  /* grid-auto-flow: column; */
+  grid-template-columns: min-content auto min-content;
+}
+.cartorder_wrapinfo_wrapimg {
+  width: 146px;
+  height: 136px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cartorder_wrapinfo_wrapimg_img {
+  width: 100%;
+  height: 100%;
+}
+.cartorder_wrapinfo_info {
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+  justify-content: center;
+  margin: 30px 0 0 24px;
+}
+.cartorder_wrapinfo_info_title {
+  height: 21px;
+
+  color: var(--color-text-heading);
+
+  font-family: Montserrat;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 17px;
+  line-height: 21px;
+  letter-spacing: 0%;
+}
+.cartorder_wrapinfo_info_price {
+  height: 18px;
+  color: var(--color-text-muted2);
+  font-family: Montserrat;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0%;
+}
