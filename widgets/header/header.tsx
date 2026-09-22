@@ -36,10 +36,10 @@ export function Header(): React.JSX.Element {
       <nav className={header.nav}>
         {/* мепить */}
         <BadgeLink path={"/favorite"} count={countToFavorite}>
-          <img src="/icons/header/favorite.svg" alt="favorite" />
+          <img height={24} width={24} src="/icons/header/favorite.svg" alt="favorite" />
         </BadgeLink>
         <BadgeLink path={"/cart"} count={cartProducts.totalamount}>
-          <img src="/icons/header/cart.svg" alt="cart" />
+          <img height={24} width={24} src="/icons/header/cart.svg" alt="cart" />
         </BadgeLink>
         {/* мепить */}
       </nav>
