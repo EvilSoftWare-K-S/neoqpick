@@ -13,7 +13,9 @@ export type TProductsResponse = Record<string, TProduct[]>;
 
 export type TProductCart = TProduct & { amount: number };
 
+export type TProductCartItems = Record<string, TProductCart>
+
 export type TProductsStorage = {
-  items: Record<string, TProductCart>;
+  items: TProductCartItems;
   totalamount: number;
 };

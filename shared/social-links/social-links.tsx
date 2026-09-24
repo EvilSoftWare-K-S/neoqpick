@@ -1,4 +1,5 @@
-import sociallinks from "./social-links.module.css";
+import styles from "./social-links.module.css";
+import { UiLink } from "@shared/link/ui-link";
 type TSocial = {
   name: string;
   href: string;
@@ -29,18 +30,18 @@ const SOCIALS: TSocial[] = [
 
 export function SocialLinks() {
   return (
-    <ul className={sociallinks.sociallinks}>
+    <ul className={styles.socialLinks}>
       {SOCIALS.map((social) => (
         <li key={social.name}>
-          <a
-            href={social.href}
+          <UiLink
+            to={social.href}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={social.label}
-            className={sociallinks.sociallinkslink}
+            className={styles.socialLinks__link}
           >
             <img src={social.icon} alt={social.name} width={30} height={30} />
-          </a>
+          </UiLink>
         </li>
       ))}
     </ul>

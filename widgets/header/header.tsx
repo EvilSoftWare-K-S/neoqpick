@@ -1,47 +1,28 @@
-import { Link } from "react-router";
-import header from "./header.module.css";
+import styles from "./header.module.css";
 import { useState } from "react";
-import { BadgeLink } from "@features/badge-link/badge-link";
+import { BadgeLink } from "@shared/badge-link/badge-link";
 import { useCart } from "@shared/hooks/use-cart";
+import { Logo } from "@features/logo/logo";
 export function Header(): React.JSX.Element {
-   const { cartProducts } = useCart();
-  // вынести в хук 
+  const { cartProducts } = useCart();
+  // вынести в хук
   const [countToFavorite, setCountToFavorite] = useState<number>(0);
   // вынести в хук
   return (
-    <header className={header.header}>
-      {/* вынести в компонент */}
-      <Link to={"/"} className={header.logo}>
-        <svg
-          width="85"
-          height="30"
-          viewBox="0 0 85 30"
-          style={{ display: "block" }}
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <text
-            x="0"
-            y="24"
-            fontFamily="Montserrat, sans-serif"
-            fontSize="25"
-            width={700}
-            fontWeight="bold"
-            fill={`var(--color-text-logo)`}
-          >
-            QPICK
-          </text>
-        </svg>
-      </Link>
-      {/* вынести в компонент */}
-      <nav className={header.nav}>
-        {/* мепить */}
+    <header className={styles.header}>
+      <Logo />
+      <nav className={styles.nav}>
         <BadgeLink path={"/favorite"} count={countToFavorite}>
-          <img src="/icons/header/favorite.svg" alt="favorite" />
+          <img
+            height={24}
+            width={24}
+            src="/icons/header/favorite.svg"
+            alt="favorite"
+          />
         </BadgeLink>
         <BadgeLink path={"/cart"} count={cartProducts.totalamount}>
-          <img src="/icons/header/cart.svg" alt="cart" />
+          <img height={24} width={24} src="/icons/header/cart.svg" alt="cart" />
         </BadgeLink>
-        {/* мепить */}
       </nav>
     </header>
   );

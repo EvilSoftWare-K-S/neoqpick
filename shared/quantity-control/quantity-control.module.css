@@ -1,0 +1,21 @@
+.bottomPanel {
+  margin-left: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 118px;
+}
+
+.bottomPanel__amount {
+  color: var(--color-text-default);
+  height: 21px;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 17px;
+}
+.bottomPanel__button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--color-accent-secondary);
+}
