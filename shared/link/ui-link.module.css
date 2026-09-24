@@ -1,0 +1,46 @@
+.link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Montserrat;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+/* ---------- Вариант 1: primary ---------- */
+.primary {
+  opacity: 1;
+}
+
+.primary:hover:not(:disabled) {
+  opacity: 0.7;
+}
+
+.primary:active:not(:disabled) {
+  opacity: 0.9;
+}
+
+/* ---------- Вариант 2: secondary ---------- */
+.secondary {
+  color: #374151;
+  background-color: #f3f4f6;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.secondary:hover:not(:disabled) {
+  color: #111827;
+  background-color: #e5e7eb;
+}
+
+.secondary:active:not(:disabled) {
+  background-color: #d1d5db;
+}

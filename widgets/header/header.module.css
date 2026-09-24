@@ -3,11 +3,6 @@
   display: flex;
   justify-content: space-between;
 }
-.logo {
-  display: flex;
-  line-height: 0;
-  align-items: center;
-}
 .nav {
   display: flex;
   align-items: center;

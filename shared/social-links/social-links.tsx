@@ -1,5 +1,5 @@
-import { Link } from "react-router";
 import styles from "./social-links.module.css";
+import { UiLink } from "@shared/link/ui-link";
 type TSocial = {
   name: string;
   href: string;
@@ -33,7 +33,7 @@ export function SocialLinks() {
     <ul className={styles.socialLinks}>
       {SOCIALS.map((social) => (
         <li key={social.name}>
-          <Link
+          <UiLink
             to={social.href}
             target="_blank"
             rel="noopener noreferrer"
@@ -41,7 +41,7 @@ export function SocialLinks() {
             className={styles.socialLinks__link}
           >
             <img src={social.icon} alt={social.name} width={30} height={30} />
-          </Link>
+          </UiLink>
         </li>
       ))}
     </ul>

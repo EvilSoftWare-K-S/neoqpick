@@ -49,11 +49,8 @@
 }
 
 .product__link {
-  display: flex;
-  color: inherit;
-  text-decoration: none;
-  flex-direction: column;
-  justify-content: center;
+  width: auto;
+  height: auto;
 }
 
 .product__link::after {
