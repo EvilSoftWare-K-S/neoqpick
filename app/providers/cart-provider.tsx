@@ -10,10 +10,6 @@ const EMPTY_CART: TProductsStorage = {
 };
 
 function readCart(): TProductsStorage {
-  if (typeof window === "undefined") {
-    return EMPTY_CART;
-  }
-
   try {
     const raw = localStorage.getItem(CART_KEY);
     if (!raw) {
@@ -42,11 +38,24 @@ function recalcTotal(items: TProductsStorage["items"]): TProductsStorage {
 }
 
 export function CartProvider({ children }: { children: ReactNode }) {
-  const [cartProducts, setCartProducts] = useState<TProductsStorage>(readCart);
+  const [cartProducts, setCartProducts] =
+    useState<TProductsStorage>(EMPTY_CART);
 
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  // Загружаем корзину только после hydration
   useEffect(() => {
+    setCartProducts(readCart());
+    setIsInitialized(true);
+  }, []);
+
+  // Сохраняем только после загрузки существующей корзины
+  useEffect(() => {
+    if (!isInitialized) {
+      return;
+    }
     localStorage.setItem(CART_KEY, JSON.stringify(cartProducts));
-  }, [cartProducts]);
+  }, [cartProducts, isInitialized]);
 
   const addToCart = useCallback((product: TProduct) => {
     setCartProducts((prev) => {

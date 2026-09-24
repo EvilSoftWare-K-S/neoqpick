@@ -1,4 +1,4 @@
-.sociallinks {
+.socialLinks {
   display: flex;
   align-items: center;
   gap: 18px;
@@ -7,12 +7,12 @@
   margin: 0;
 }
 
-.sociallinks li {
+.socialLinks li {
   line-height: 0;
   font-size: 0;
 }
 
-.sociallinkslink {
+.socialLinks__link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -24,7 +24,7 @@
     transform 0.15s ease;
 }
 
-.sociallinkslink:hover {
+.socialLinks__link:hover {
   opacity: 0.7;
   transform: translateY(-1px);
 }

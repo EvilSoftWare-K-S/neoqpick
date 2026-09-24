@@ -42,16 +42,33 @@
   background-color: var(--color-bg);
   color: var(--btn-bg);
 }
- 
+
 /* Вариант 2: empty */
 .empty {
   color: var(--color-text-default);
   background-color: var(--btn-text);
 }
 .empty:hover:not(:disabled) {
-  color: var(--color-text-muted); 
+  color: var(--color-text-muted);
 }
 
 .empty:active:not(:disabled) {
-  color: var(--color-text-muted2); 
+  color: var(--color-text-muted2);
+}
+
+/* Вариант 3: img */
+.icon {
+  border: none;
+  width: min-content;
+  height: min-content;
+  background-color: var(--color-accent-secondary);
+}
+.icon:hover:not(:disabled) {
+  background-color: var(--color-accent-primary);
+  box-shadow: var(--shadow-button);
+}
+
+.icon:active:not(:disabled) {
+  background-color: var(--color-accent-secondary);
+  box-shadow: var(--shadow-button);
 }

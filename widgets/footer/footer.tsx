@@ -1,12 +1,12 @@
 import { Link, NavLink } from "react-router";
-import footer from "./footer.module.css";
+import styles from "./footer.module.css";
 import header from "@widgets/header/header.module.css";
 import { SocialLinks } from "@shared/social-links/social-links";
 import { LanguagePanel } from "@features/language-panel/language-panel";
 export function Footer(): React.JSX.Element {
   return (
-    <footer className={footer.footer}>
-      <div className={footer.logo}>
+    <footer className={styles.footer}>
+      <div className={styles.logo}>
         {/* вынести в компонент */}
         <Link to={"/"} className={header.logo}>
           <svg
@@ -32,13 +32,13 @@ export function Footer(): React.JSX.Element {
         {/* вынести в компонент */}
       </div>
       {/* вынести в компонент и передать объект для мепа */}
-      <nav className={footer.nav}>
-        <div className={footer.navcol}>
+      <nav className={styles.nav}>
+        <div className={styles.navcol}>
           <NavLink
             className={({ isActive }) =>
               isActive
-                ? `${footer.navlinkactive} ${footer.navlink}`
-                : footer.navlink
+                ? `${styles.navlinkactive} ${styles.navlink}`
+                : styles.navlink
             }
             to={"/favorite"}
           >
@@ -47,8 +47,8 @@ export function Footer(): React.JSX.Element {
           <NavLink
             className={({ isActive }) =>
               isActive
-                ? `${footer.navlinkactive} ${footer.navlink}`
-                : footer.navlink
+                ? `${styles.navlinkactive} ${styles.navlink}`
+                : styles.navlink
             }
             to={"/cart"}
           >
@@ -57,20 +57,20 @@ export function Footer(): React.JSX.Element {
           <NavLink
             className={({ isActive }) =>
               isActive
-                ? `${footer.navlinkactive} ${footer.navlink}`
-                : footer.navlink
+                ? `${styles.navlinkactive} ${styles.navlink}`
+                : styles.navlink
             }
             to={"/contacts"}
           >
             Контакты
           </NavLink>
         </div>
-        <div className={footer.navcol}>
+        <div className={styles.navcol}>
           <NavLink
             className={({ isActive }) =>
               isActive
-                ? `${footer.navlinkactive} ${footer.navlink}`
-                : footer.navlink
+                ? `${styles.navlinkactive} ${styles.navlink}`
+                : styles.navlink
             }
             to={"/conditions"}
           >
@@ -80,7 +80,7 @@ export function Footer(): React.JSX.Element {
         </div>
       </nav>
       {/* вынести в компонент и передать объект для мепа */}
-      <div className={footer.sociallink}>
+      <div className={styles.sociallink}>
         <SocialLinks />
       </div>
     </footer>

@@ -1,0 +1,17 @@
+
+.cartOrderBottom {
+  margin-top: 19px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cartOrderBottom__totalCurrency {
+  height: 18px;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 15px;
+  text-align: right;
+
+  color: var(--color-text-heading);
+}

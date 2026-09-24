@@ -1,7 +1,7 @@
 import { Link } from "react-router";
-import header from "./header.module.css";
+import styles from "./header.module.css";
 import { useState } from "react";
-import { BadgeLink } from "@features/badge-link/badge-link";
+import { BadgeLink } from "@shared/badge-link/badge-link";
 import { useCart } from "@shared/hooks/use-cart";
 export function Header(): React.JSX.Element {
    const { cartProducts } = useCart();
@@ -9,9 +9,9 @@ export function Header(): React.JSX.Element {
   const [countToFavorite, setCountToFavorite] = useState<number>(0);
   // вынести в хук
   return (
-    <header className={header.header}>
+    <header className={styles.header}>
       {/* вынести в компонент */}
-      <Link to={"/"} className={header.logo}>
+      <Link to={"/"} className={styles.logo}>
         <svg
           width="85"
           height="30"
@@ -33,7 +33,7 @@ export function Header(): React.JSX.Element {
         </svg>
       </Link>
       {/* вынести в компонент */}
-      <nav className={header.nav}>
+      <nav className={styles.nav}>
         {/* мепить */}
         <BadgeLink path={"/favorite"} count={countToFavorite}>
           <img height={24} width={24} src="/icons/header/favorite.svg" alt="favorite" />
