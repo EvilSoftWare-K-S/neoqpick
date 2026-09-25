@@ -47,9 +47,11 @@ export default function CartList() {
             );
           })}
         </article>
-        <CartSummary
-          total={currencyFormatter(totalSummary(cartProducts.items))}
-        />
+        <div className={cart.cart__cartSummary}>
+          <CartSummary
+            total={currencyFormatter(totalSummary(cartProducts.items))}
+          />
+        </div>
       </div>
     </Main>
   );

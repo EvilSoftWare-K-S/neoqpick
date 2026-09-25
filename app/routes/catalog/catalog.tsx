@@ -1,7 +1,7 @@
 import type { Route } from "./+types/catalog";
 import { BD_PRODUCTS } from "@shared/models/mock";
 import type { TProduct, TProductsResponse } from "@shared/models/types";
-import catalog from "./catalog.module.css";
+import styles from "./catalog.module.css";
 import { CatalogItem } from "@entities/catalog-item/catalog-item";
 import Main from "@widgets/main/main";
 import { ExpandButton, Modal } from "@widgets/modal/modal";
@@ -37,31 +37,27 @@ export default function Catalog({ loaderData }: Route.ComponentProps) {
   const [selectedProduct, setSelectedProduct] = useState<TProduct | null>(null);
   return (
     <Main title={title}>
-      {Object.keys(products).map((type) => {
-        return (
-          <article className={catalog.catalog_section_wraparticle} key={type}>
-            <h2 className={catalog.catalog_section_wraparticle_title}>
-              {type}
-            </h2>
-            <div className={catalog.catalog_section_wraparticle_wrap}>
-              {products[type].map((product) => {
-                return (
-                  <CatalogItem
-                    key={product.id}
-                    product={product}
-                    buttonExpand={
-                      <ExpandButton
-                        onOpen={() => setSelectedProduct(product)}
-                        title={product.title}
-                      />
-                    }
-                  />
-                );
-              })}
+      <div className={styles.catalog}>
+        {Object.keys(products).map((type) => (
+          <article className={styles.catalog__section} key={type}>
+            <h2 className={styles.catalog__title}>{type}</h2>
+            <div className={styles.catalog__grid}>
+              {products[type].map((product) => (
+                <CatalogItem
+                  key={product.id}
+                  product={product}
+                  buttonExpand={
+                    <ExpandButton
+                      onOpen={() => setSelectedProduct(product)}
+                      title={product.title}
+                    />
+                  }
+                />
+              ))}
             </div>
           </article>
-        );
-      })}
+        ))}
+      </div>
 
       <Modal
         isOpen={selectedProduct !== null}
@@ -76,8 +72,15 @@ export default function Catalog({ loaderData }: Route.ComponentProps) {
         }
       >
         {selectedProduct && (
-          <div style={{ display: "flex", justifyContent: "center" }}>
+          <div className={styles.modal}
+          >
             <CatalogItem product={selectedProduct} />
+            <p className={styles.modal__p}>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam
+              veniam delectus libero atque rem numquam odio, magni vero ullam
+              eum iure perferendis, reprehenderit ratione, at rerum harum
+              accusantium dignissimos eveniet.
+            </p>
           </div>
         )}
       </Modal>
