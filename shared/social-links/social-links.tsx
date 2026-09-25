@@ -34,6 +34,7 @@ export function SocialLinks() {
       {SOCIALS.map((social) => (
         <li key={social.name}>
           <UiLink
+            variant="secondary"
             to={social.href}
             target="_blank"
             rel="noopener noreferrer"

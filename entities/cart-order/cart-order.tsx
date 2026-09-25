@@ -1,6 +1,6 @@
 import type { TProductCart } from "@shared/models/types";
 import cart_order from "./cart-order.module.css";
-import { currencyFormatter } from "@shared/utils/currency-formatter";
+import { currencyFormatter } from "@shared/utils/formatter";
 export function CartOrder({
   order,
   ButtonTopPanel,

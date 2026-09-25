@@ -1,0 +1,89 @@
+.receipt {
+  position: relative;
+  background: #fff;
+  padding: 24px 24px 32px;
+  border-radius: 16px 16px 0 0;
+  box-shadow: var(--shadow-card);
+  font-family: "Montserrat", monospace;
+  color: var(--color-text-default);
+  max-width: 420px;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  font-weight: 700;
+}
+
+.logo {
+  color: var(--color-text-logo);
+  font-size: 20px;
+}
+
+.date {
+  color: var(--color-text-muted);
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+.divider {
+  margin: 14px 0;
+  border-top: 1px dashed var(--color-text-muted2);
+}
+
+.items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.itemTitle {
+  color: var(--color-text-heading);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.itemAmount {
+  color: var(--color-text-muted);
+}
+
+.itemPrice {
+  color: var(--color-text-heading);
+  font-weight: 600;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-heading);
+}
+
+.totalSum {
+  color: var(--color-accent-primary);
+}
+
+.perforation {
+  margin: 22px -24px 0;
+  border-top: 2px dashed var(--color-text-muted2);
+}
+
+.thanks {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  letter-spacing: 0.5px;
+}

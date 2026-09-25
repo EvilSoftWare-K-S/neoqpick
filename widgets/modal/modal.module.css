@@ -1,0 +1,172 @@
+/* ===== Оверлей ===== */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background-color: rgba(16, 16, 16, 0.5); /* #101010 c alpha */
+  backdrop-filter: blur(4px);
+
+  animation: overlayFadeIn 0.2s ease-out;
+}
+
+/* ===== Само окно ===== */
+.modal {
+  position: relative;
+
+  width: 100%;
+  max-width: 480px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+
+  background-color: var(--color-bg);
+  border-radius: 30px;
+  box-shadow: var(--shadow-card);
+
+  padding: 32px;
+
+  animation: modalSlideIn 0.25s ease-out;
+
+  scrollbar-color: var(--btn-bg) var(--color-bg);
+}
+
+/* ===== Шапка ===== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  margin-bottom: 24px;
+}
+
+.title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.2;
+  color: var(--color-text-heading);
+}
+
+/* ===== Кнопка закрытия ===== */
+.closeButton {
+  flex-shrink: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  color: var(--color-text-muted);
+
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.closeButton:hover {
+  background-color: rgba(16, 16, 16, 0.06);
+  color: var(--color-text-default);
+}
+
+.closeButton:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+}
+
+/* ===== Контент ===== */
+.content {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: var(--color-text-default);
+}
+
+/* ===== Футер с кнопками действий (опционально) ===== */
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+
+  margin-top: 24px;
+}
+
+/* ===== Кнопки в стиле проекта ===== */
+.button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 20px;
+
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+
+  cursor: pointer;
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+.buttonPrimary {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  box-shadow: var(--shadow-button);
+}
+
+.buttonPrimary:hover {
+  background-color: #000000;
+}
+
+.buttonSecondary {
+  background-color: var(--color-accent-primary);
+  color: var(--color-text-on-accent);
+}
+
+.buttonSecondary:hover {
+  background-color: var(--color-accent-secondary);
+}
+
+/* ===== Анимации ===== */
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ===== Уважаем prefers-reduced-motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  .overlay,
+  .modal {
+    animation: none;
+  }
+}

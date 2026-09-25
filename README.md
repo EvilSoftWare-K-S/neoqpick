@@ -86,7 +86,14 @@ app <- pages <- widgets <- features <- entities <- shared
 
 
 ## Credits
-наушники наушник наушники гарнитуры Значок by Chameleon Design on 
+наушники наушник наушники гарнитуры Значок 
+by Chameleon Design on 
 <a href="https://icon-icons.com/ru/authors/231-chameleon-design">Icon-Icons.com</a>
 <a href="https://icon-icons.com/ru/icon/earphones-earpiece-headphones-headsets-sound-music-handsfree/53483">Chameleon Design</a>
+<a href="https://creativecommons.org/licenses/by/4.0/">лицензия: [CC BY 4.0]</a>
+
+увеличить Значок
+by Freeicons on 
+<a href="https://icon-icons.com/ru/authors/737-freeicons">Icon-Icons.com</a>
+<a href="https://icon-icons.com/ru/icon/enlarge/121031">Chameleon Design</a>
 <a href="https://creativecommons.org/licenses/by/4.0/">лицензия: [CC BY 4.0]</a>
