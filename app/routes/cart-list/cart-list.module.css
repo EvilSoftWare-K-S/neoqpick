@@ -16,3 +16,14 @@
   width: 20px;
   height: 17px;
 }
+
+@media (max-width: 900px) {
+  .cart {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: auto;
+  }
+  .cart__cartSummary {
+    margin: 0 auto;
+  }
+}
