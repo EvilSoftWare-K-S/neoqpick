@@ -8,6 +8,8 @@ import { ExpandButton, Modal } from "@widgets/modal/modal";
 import { useState } from "react";
 import { Button } from "@shared/button/button";
 import { useFavorite } from "@shared/hooks/faborite/use-favorite";
+import { getTranslation } from "@shared/utils/get-translate";
+import type { TTranslationKey } from "@shared/dictionaries/dictionaries";
 
 export function meta({}: Route.MetaArgs) {
   return [{ title: "Catalog" }, { name: "description", content: "QPICK!" }];
@@ -40,7 +42,9 @@ export default function Catalog({ loaderData }: Route.ComponentProps) {
       <div className={styles.catalog}>
         {Object.keys(products).map((type) => (
           <article className={styles.catalog__section} key={type}>
-            <h2 className={styles.catalog__title}>{type}</h2>
+            <h2 className={styles.catalog__title}>
+              {getTranslation(type as TTranslationKey, "ru")}
+            </h2>
             <div className={styles.catalog__grid}>
               {products[type].map((product) => (
                 <CatalogItem
@@ -72,8 +76,7 @@ export default function Catalog({ loaderData }: Route.ComponentProps) {
         }
       >
         {selectedProduct && (
-          <div className={styles.modal}
-          >
+          <div className={styles.modal}>
             <CatalogItem product={selectedProduct} />
             <p className={styles.modal__p}>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam
