@@ -1,0 +1,17 @@
+.favorite {
+  display: grid; 
+  grid-template-columns: auto min-content;
+}
+.favorite__wrap {
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+}
+.buttonTopPanel__button {
+  width: min-content;
+  height: min-content;
+}
+.buttonTopPanel__button__img {
+  width: 20px;
+  height: 17px;
+}

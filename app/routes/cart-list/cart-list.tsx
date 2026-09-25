@@ -1,8 +1,8 @@
-import { useCart } from "@shared/hooks/use-cart";
+import { useCart } from "@shared/hooks/cart/use-cart";
 import cart from "./cart-list.module.css";
 import type { Route } from "./+types/cart-list";
 import { CartOrder } from "@entities/cart-order/cart-order";
-import { currencyFormatter } from "@shared/utils/currency-formatter";
+import { currencyFormatter } from "@shared/utils/formatter";
 import { CartSummary } from "@features/cart-summary/cart-summary";
 import { totalSummary } from "@shared/utils/total-summary";
 import { Button } from "@shared/button/button";

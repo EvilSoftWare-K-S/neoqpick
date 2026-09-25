@@ -1,6 +1,6 @@
 import type { TProductsStorage, TProduct } from "@shared/models/types";
 import { useCallback, useEffect, useState, type ReactNode } from "react";
-import { CartContext } from "@shared/hooks/cart-context";
+import { CartContext } from "@shared/hooks/cart/cart-context";
 
 const CART_KEY = "cart";
 

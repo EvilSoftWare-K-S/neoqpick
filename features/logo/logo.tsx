@@ -2,7 +2,12 @@ import styles from "./logo.module.css";
 import { UiLink } from "@shared/link/ui-link";
 export function Logo() {
   return (
-    <UiLink to={"/"} aria-label={`Click to go to catalog`} className={styles.logo}>
+    <UiLink
+      variant="secondary"
+      to={"/"}
+      aria-label={`Click to go to catalog`}
+      className={styles.logo}
+    >
       <svg
         width="85"
         height="30"

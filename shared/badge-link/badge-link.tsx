@@ -11,6 +11,7 @@ export function BadgeLink({ children, count, path }: ICartLinkProps) {
 
   return (
     <UiLink
+      variant="secondary"
       to={path}
       className={badge.link}
       aria-label={showBadge ? `${path}: ${count}` : `${path}`}

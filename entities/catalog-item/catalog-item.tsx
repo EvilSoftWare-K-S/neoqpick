@@ -1,14 +1,24 @@
 import type { TProduct } from "@shared/models/types";
 import style from "./catalog-item.module.css";
-import { useCart } from "@shared/hooks/use-cart";
+import { useCart } from "@shared/hooks/cart/use-cart";
 import { Button } from "@shared/button/button";
 import { UiLink } from "@shared/link/ui-link";
-export function CatalogItem({ product }: { product: TProduct }) {
+export function CatalogItem({
+  product,
+  buttonExpand,
+}: {
+  product: TProduct;
+  buttonExpand?: React.ReactNode;
+}) {
   const { addToCart } = useCart();
   return (
     <article className={style.product}>
+      {buttonExpand != null && (
+        <div className={style.product__expand}>{buttonExpand}</div>
+      )}
       <UiLink
-        to={`/catalog/${product.id}`}
+        variant="secondary"
+        to={`/${product.id}`}
         aria-label={`Click to go to ${product.title}${product.id}`}
         className={style.product__link}
       >

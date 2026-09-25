@@ -1,8 +1,8 @@
 import { QuantityControl } from "@shared/quantity-control/quantity-control";
 import styles from "./cart-order-bottom.module.css";
-import { currencyFormatter } from "@shared/utils/currency-formatter";
+import { currencyFormatter } from "@shared/utils/formatter";
 import type { TProductCartItems } from "@shared/models/types";
-import { useCart } from "@shared/hooks/use-cart";
+import { useCart } from "@shared/hooks/cart/use-cart";
 export function CartOrderBottom({ items }: TProductCartItems) {
   const { plusProductCart, minusProductCart } = useCart();
   return (
